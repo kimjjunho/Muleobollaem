@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".WriteActivity">
 
     <ImageButton
         android:id="@+id/iamge_btn_back"
@@ -20,11 +20,11 @@
 
     <TextView
         android:id="@+id/textView"
-        android:layout_width="56dp"
+        android:layout_width="42dp"
         android:layout_height="18dp"
         android:layout_marginTop="50dp"
         android:fontFamily="@font/inter_bold"
-        android:text="커뮤니티"
+        android:text="글쓰기"
         android:textColor="@color/black"
         android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -32,27 +32,17 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
-    <ImageButton
-        android:id="@+id/image_btn_write"
+    <Button
+        android:id="@+id/image_btn_finish"
         style="?android:attr/borderlessButtonStyle"
-        android:layout_width="40dp"
-        android:layout_height="40dp"
-        android:layout_marginEnd="30dp"
-        android:scaleType="fitCenter"
-        android:src="@drawable/main_write"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="15dp"
+        android:text="완료"
+        android:textColor="#AAAAAA"
+        android:textSize="15dp"
         app:layout_constraintBottom_toBottomOf="@+id/textView"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="@+id/textView" />
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_main"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        android:layout_marginTop="30dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textView" />
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>
