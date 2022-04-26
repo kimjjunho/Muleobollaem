@@ -19,18 +19,10 @@ class LoginBaseActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction().replace(R.id.frameLayout,LoginFragment()).commit()
     }
 
-    fun fragmentChange(check : Int){
-        when(check){
-            1->{
-                val transaction = supportFragmentManager.beginTransaction()
-                transaction.replace(R.id.frameLayout,SignUpFragment())
-
-                transaction.addToBackStack(null)
-                transaction.commit()
-            }
-            2->{
-                supportFragmentManager.beginTransaction().replace(R.id.frameLayout,LoginFragment()).commit()
-            }
-        }
+    fun fragmentChange(){
+        val transaction = supportFragmentManager.beginTransaction()
+        transaction.replace(R.id.frameLayout,SignUpFragment())
+        transaction.addToBackStack(null)
+        transaction.commit()
     }
 }

@@ -1,5 +1,6 @@
 package com.example.muleobollaemproject.login
 
+import android.content.Intent
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
@@ -8,6 +9,7 @@ import android.view.ViewGroup
 import com.example.muleobollaemproject.MainActivity
 import com.example.muleobollaemproject.R
 import com.example.muleobollaemproject.databinding.FragmentLoginBinding
+import kotlin.math.log
 
 
 class LoginFragment : Fragment() {
@@ -26,10 +28,14 @@ class LoginFragment : Fragment() {
         val loginBaseActivity = activity as LoginBaseActivity
 
         mBinding.btnSign.setOnClickListener {
-            loginBaseActivity.fragmentChange(1)
+            loginBaseActivity.fragmentChange()
         }
         mBinding.imageBtnSign.setOnClickListener {
-            loginBaseActivity.fragmentChange(1)
+            loginBaseActivity.fragmentChange()
+        }
+        mBinding.btnLogin.setOnClickListener {
+            startActivity(Intent(loginBaseActivity,MainActivity::class.java))
+            loginBaseActivity.finish()
         }
 
         return view

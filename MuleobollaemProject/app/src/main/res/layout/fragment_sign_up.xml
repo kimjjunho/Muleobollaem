@@ -6,12 +6,26 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".signup.SignUpFragment">
 
+
+    <ImageButton
+        android:id="@+id/image_btn_back"
+        style="?android:attr/borderlessButtonStyle"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginBottom="8dp"
+        android:scaleType="fitCenter"
+        android:src="@drawable/login_btn_back"
+        app:layout_constraintBottom_toTopOf="@+id/textView"
+        app:layout_constraintStart_toStartOf="parent" />
+
+
     <TextView
         android:id="@+id/textView"
         android:layout_width="89dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="36dp"
-        android:layout_marginTop="56dp"
+        android:layout_marginTop="76dp"
         android:fontFamily="@font/inter_semibold"
         android:gravity="start"
         android:text="뭐든지\n물어볼램?"
@@ -19,7 +33,6 @@
         android:textSize="21dp"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout"
