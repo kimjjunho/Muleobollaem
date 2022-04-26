@@ -1,5 +1,20 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="app/src/main/res/drawable/login_btn_id_check.xml" value="0.19947916666666668" />
+        <entry key="app/src/main/res/drawable/login_button_click.xml" value="0.3494791666666667" />
+        <entry key="app/src/main/res/drawable/login_text_btn_box.xml" value="0.3494791666666667" />
+        <entry key="app/src/main/res/drawable/login_text_click.xml" value="0.3494791666666667" />
+        <entry key="app/src/main/res/layout/activity_login.xml" value="0.23672551339834047" />
+        <entry key="app/src/main/res/layout/activity_login_base.xml" value="0.15526849037487336" />
+        <entry key="app/src/main/res/layout/activity_main.xml" value="0.16210739614994935" />
+        <entry key="app/src/main/res/layout/fragment_login.xml" value="0.298644773073474" />
+        <entry key="app/src/main/res/layout/fragment_sign_up.xml" value="0.14051346146057375" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_11" default="true" project-jdk-name="Android Studio default JDK" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>
