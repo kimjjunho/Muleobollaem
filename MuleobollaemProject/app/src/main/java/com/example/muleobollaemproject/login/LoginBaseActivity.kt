@@ -4,6 +4,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.muleobollaemproject.R
 import com.example.muleobollaemproject.databinding.ActivityLoginBaseBinding
+import com.example.muleobollaemproject.setStatusBarTransparent
 import com.example.muleobollaemproject.signup.SignUpFragment
 
 class LoginBaseActivity : AppCompatActivity() {
@@ -15,6 +16,7 @@ class LoginBaseActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         mBinding = ActivityLoginBaseBinding.inflate(layoutInflater)
         setContentView(binding.root)
+        setStatusBarTransparent()
 
         supportFragmentManager.beginTransaction().replace(R.id.frameLayout,LoginFragment()).commit()
     }

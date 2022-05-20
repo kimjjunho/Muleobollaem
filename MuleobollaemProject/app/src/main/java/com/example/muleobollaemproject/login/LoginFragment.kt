@@ -6,10 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.muleobollaemproject.MainActivity
-import com.example.muleobollaemproject.R
+import com.example.muleobollaemproject.main.MainActivity
 import com.example.muleobollaemproject.databinding.FragmentLoginBinding
-import kotlin.math.log
+import com.example.muleobollaemproject.setStatusBarTransparent
 
 
 class LoginFragment : Fragment() {
@@ -34,7 +33,7 @@ class LoginFragment : Fragment() {
             loginBaseActivity.fragmentChange()
         }
         mBinding.btnLogin.setOnClickListener {
-            startActivity(Intent(loginBaseActivity,MainActivity::class.java))
+            startActivity(Intent(loginBaseActivity, MainActivity::class.java))
             loginBaseActivity.finish()
         }
 

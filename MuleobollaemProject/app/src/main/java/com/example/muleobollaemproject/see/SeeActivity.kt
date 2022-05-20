@@ -4,6 +4,7 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.muleobollaemproject.databinding.ActivitySeeBinding
+import com.example.muleobollaemproject.setStatusBarColorBlack
 
 class SeeActivity : AppCompatActivity() {
 
@@ -12,6 +13,7 @@ class SeeActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+        setStatusBarColorBlack()
 
         mBinding = ActivitySeeBinding.inflate(layoutInflater)
         setContentView(binding.root)

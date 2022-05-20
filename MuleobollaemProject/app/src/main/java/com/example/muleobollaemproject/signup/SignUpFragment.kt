@@ -6,6 +6,7 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.example.muleobollaemproject.R
 import com.example.muleobollaemproject.databinding.FragmentSignUpBinding
 import com.example.muleobollaemproject.login.LoginBaseActivity
@@ -27,6 +28,9 @@ class SignUpFragment : Fragment() {
 
         mBinding.imageBtnBack.setOnClickListener {
             loginBaseActivity.onBackPressed()
+        }
+        mBinding.btnIdCheck.setOnClickListener {
+            Toast.makeText(context, "시용 가능한 아이디입니다!!",Toast.LENGTH_SHORT).show()
         }
 
         return view

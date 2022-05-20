@@ -59,6 +59,7 @@
         android:fontFamily="@font/inter_semibold"
         android:text="로그인"
         android:textSize="15dp"
+        android:elevation="10dp"
         android:textColor="@drawable/login_text_click"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
