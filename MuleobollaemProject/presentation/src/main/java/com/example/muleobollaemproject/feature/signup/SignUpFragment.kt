@@ -1,16 +1,13 @@
-package com.example.muleobollaemproject.signup
+package com.example.muleobollaemproject.feature.signup
 
-import android.os.Binder
 import android.os.Bundle
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.example.muleobollaemproject.R
 import com.example.muleobollaemproject.databinding.FragmentSignUpBinding
-import com.example.muleobollaemproject.login.LoginBaseActivity
-import kotlin.math.log
+import com.example.muleobollaemproject.feature.login.LoginBaseActivity
 
 class SignUpFragment : Fragment() {
 

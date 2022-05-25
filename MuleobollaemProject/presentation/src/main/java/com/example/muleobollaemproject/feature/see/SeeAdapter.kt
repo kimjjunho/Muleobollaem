@@ -1,4 +1,4 @@
-package com.example.muleobollaemproject.see
+package com.example.muleobollaemproject.feature.see
 
 import android.view.LayoutInflater
 import android.view.ViewGroup

@@ -1,10 +1,9 @@
-package com.example.muleobollaemproject.main
+package com.example.muleobollaemproject.feature.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.muleobollaemproject.R
-import com.example.muleobollaemproject.databinding.ActivityMainBinding
 import com.example.muleobollaemproject.databinding.ItemMainBinding
 
 class MainAdapter(private val mainList:ArrayList<MainData>, private val mainActivity: MainActivity):RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {

@@ -1,11 +1,12 @@
-package com.example.muleobollaemproject.login
+package com.example.muleobollaemproject.feature.login
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.muleobollaemproject.R
 import com.example.muleobollaemproject.databinding.ActivityLoginBaseBinding
+import com.example.muleobollaemproject.feature.login.ui.LoginFragment
 import com.example.muleobollaemproject.setStatusBarTransparent
-import com.example.muleobollaemproject.signup.SignUpFragment
+import com.example.muleobollaemproject.feature.signup.SignUpFragment
 
 class LoginBaseActivity : AppCompatActivity() {
 
@@ -18,12 +19,12 @@ class LoginBaseActivity : AppCompatActivity() {
         setContentView(binding.root)
         setStatusBarTransparent()
 
-        supportFragmentManager.beginTransaction().replace(R.id.frameLayout,LoginFragment()).commit()
+        supportFragmentManager.beginTransaction().replace(R.id.frameLayout, LoginFragment()).commit()
     }
 
     fun fragmentChange(){
         val transaction = supportFragmentManager.beginTransaction()
-        transaction.replace(R.id.frameLayout,SignUpFragment())
+        transaction.replace(R.id.frameLayout, SignUpFragment())
         transaction.addToBackStack(null)
         transaction.commit()
     }

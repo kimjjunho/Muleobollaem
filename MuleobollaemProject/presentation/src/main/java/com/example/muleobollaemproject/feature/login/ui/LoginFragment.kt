@@ -1,4 +1,4 @@
-package com.example.muleobollaemproject.login
+package com.example.muleobollaemproject.feature.login.ui
 
 import android.content.Intent
 import android.os.Bundle
@@ -6,9 +6,9 @@ import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.example.muleobollaemproject.main.MainActivity
+import com.example.muleobollaemproject.feature.main.MainActivity
 import com.example.muleobollaemproject.databinding.FragmentLoginBinding
-import com.example.muleobollaemproject.setStatusBarTransparent
+import com.example.muleobollaemproject.feature.login.LoginBaseActivity
 
 
 class LoginFragment : Fragment() {

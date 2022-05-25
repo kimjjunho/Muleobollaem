@@ -10,16 +10,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MuleobollaemProject">
         <activity
-            android:name=".see.SeeActivity"
+            android:name="com.example.muleobollaemproject.feature.see.SeeActivity"
             android:exported="false" />
         <activity
             android:name=".WriteActivity"
             android:exported="false" />
         <activity
-            android:name=".main.MainActivity"
+            android:name="com.example.muleobollaemproject.feature.main.MainActivity"
             android:exported="false" />
         <activity
-            android:name=".login.LoginBaseActivity"
+            android:name="com.example.muleobollaemproject.feature.login.LoginBaseActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

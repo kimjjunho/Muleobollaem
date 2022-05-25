@@ -1,16 +1,14 @@
-package com.example.muleobollaemproject.main
+package com.example.muleobollaemproject.feature.main
 
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
 import androidx.recyclerview.widget.LinearLayoutManager
-import com.example.muleobollaemproject.see.SeeActivity
+import com.example.muleobollaemproject.feature.see.SeeActivity
 import com.example.muleobollaemproject.WriteActivity
 import com.example.muleobollaemproject.databinding.ActivityMainBinding
-import com.example.muleobollaemproject.login.LoginBaseActivity
+import com.example.muleobollaemproject.feature.login.LoginBaseActivity
 import com.example.muleobollaemproject.setStatusBarColorBlack
-import com.example.muleobollaemproject.setStatusBarTransparent
 
 class MainActivity : AppCompatActivity() {
 

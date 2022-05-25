@@ -1,6 +1,5 @@
-package com.example.muleobollaemproject.see
+package com.example.muleobollaemproject.feature.see
 
-import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.muleobollaemproject.databinding.ActivitySeeBinding
