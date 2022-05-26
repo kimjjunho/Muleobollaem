@@ -14,23 +14,16 @@ import androidx.viewbinding.ViewBinding
 abstract class BaseFragment <B:ViewDataBinding>(
     @LayoutRes private val layoutRes: Int
         ):Fragment(){
-            protected lateinit var binding: B
-
+    val binding get() = _binding!!
+    private var _binding : B ?= null
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
-        return binding.root
-    }
-
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        binding.lifecycleOwner = this
-
+        _binding = DataBindingUtil.inflate(inflater, layoutRes, container, false)
         initView()
-        observeEvent()
+        return binding.root
     }
 
     abstract fun observeEvent()
