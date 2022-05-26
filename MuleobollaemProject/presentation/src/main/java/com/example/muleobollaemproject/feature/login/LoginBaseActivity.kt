@@ -1,25 +1,25 @@
 package com.example.muleobollaemproject.feature.login
-
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.muleobollaemproject.R
+import com.example.muleobollaemproject.base.BaseActivity
 import com.example.muleobollaemproject.databinding.ActivityLoginBaseBinding
 import com.example.muleobollaemproject.feature.login.ui.LoginFragment
 import com.example.muleobollaemproject.setStatusBarTransparent
 import com.example.muleobollaemproject.feature.signup.SignUpFragment
 
-class LoginBaseActivity : AppCompatActivity() {
-
-    private lateinit var mBinding : ActivityLoginBaseBinding
-    private val binding get() = mBinding
-
+class LoginBaseActivity : BaseActivity<ActivityLoginBaseBinding>(R.layout.activity_login_base) {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        mBinding = ActivityLoginBaseBinding.inflate(layoutInflater)
-        setContentView(binding.root)
         setStatusBarTransparent()
+        fragmentSet()
 
-        supportFragmentManager.beginTransaction().replace(R.id.frameLayout, LoginFragment()).commit()
+    }
+
+    private fun fragmentSet(){
+        supportFragmentManager
+            .beginTransaction()
+            .replace(R.id.frameLayout, LoginFragment())
+            .commit()
     }
 
     fun fragmentChange(){
@@ -28,4 +28,6 @@ class LoginBaseActivity : AppCompatActivity() {
         transaction.addToBackStack(null)
         transaction.commit()
     }
+
+    override fun observeEvent() {}
 }
