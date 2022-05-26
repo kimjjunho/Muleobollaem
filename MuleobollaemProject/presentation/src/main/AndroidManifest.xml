@@ -16,7 +16,7 @@
             android:name=".WriteActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.muleobollaemproject.feature.main.MainActivity"
+            android:name="com.example.muleobollaemproject.feature.main.ui.MainActivity"
             android:exported="false" />
         <activity
             android:name="com.example.muleobollaemproject.feature.login.LoginBaseActivity"
