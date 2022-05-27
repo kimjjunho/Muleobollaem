@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.muleobollaemproject">
+    package="com.example.muleobollaemproject" >
 
     <application
         android:allowBackup="true"
@@ -8,19 +8,19 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-        android:theme="@style/Theme.MuleobollaemProject">
+        android:theme="@style/Theme.MuleobollaemProject" >
         <activity
-            android:name="com.example.muleobollaemproject.feature.see.SeeActivity"
+            android:name=".feature.WriteActivity"
             android:exported="false" />
         <activity
-            android:name=".WriteActivity"
+            android:name=".feature.see.SeeActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.muleobollaemproject.feature.main.ui.MainActivity"
+            android:name=".feature.main.ui.MainActivity"
             android:exported="false" />
         <activity
-            android:name="com.example.muleobollaemproject.feature.login.LoginBaseActivity"
-            android:exported="true">
+            android:name=".feature.login.LoginBaseActivity"
+            android:exported="true" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
