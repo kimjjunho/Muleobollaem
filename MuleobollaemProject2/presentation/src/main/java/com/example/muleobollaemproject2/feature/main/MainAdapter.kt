@@ -1,11 +1,13 @@
-package com.example.muleobollaemproject2
+package com.example.muleobollaemproject2.feature.main
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.databinding.ItemMainBinding
+import com.example.muleobollaemproject2.feature.Main
 
-class MainAdapter (private val mainList:ArrayList<MainData>, private val mainActivity: MainActivity):
+class MainAdapter (private val mainList:ArrayList<Main>, private val mainActivity: MainActivity):
     RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {

@@ -1,10 +1,16 @@
-package com.example.muleobollaemproject2
+package com.example.muleobollaemproject2.feature.main
 
-import androidx.appcompat.app.AppCompatActivity
+import android.content.Intent
 import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
 import com.example.muleobollaemproject2.databinding.ActivityMainBinding
+import com.example.muleobollaemproject2.feature.Main
+import com.example.muleobollaemproject2.feature.login.LoginBaseActivity
+import com.example.muleobollaemproject2.feature.see.SeeActivity
+import com.example.muleobollaemproject2.feature.write.WriteActivity
+import com.example.muleobollaemproject2.setStatusBarColorBlack
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
 
@@ -16,16 +22,16 @@ class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
         super.onCreate(savedInstanceState)
         setStatusBarColorBlack()
 
-        val mainArrayList = ArrayList<MainData>()
+        val mainArrayList = ArrayList<Main>()
         mainArrayList.add(
-            MainData(
+            Main(
                 0, "김준호", "2학년 1반", "Timetable 에 오류가 났어요 ㅜㅜ 이게 누가 알려주\n" +
                         "실 수 있나요..? "
             )
         )
-        mainArrayList.add(MainData(1, "장석연", "2학년 2반", "dd"))
-        mainArrayList.add(MainData(2, "손지원", "2학년 3반", "ㅇㅇ"))
-        mainArrayList.add(MainData(3, "최성현", "2학년 4반", "ㅎ"))
+        mainArrayList.add(Main(1, "장석연", "2학년 2반", "dd"))
+        mainArrayList.add(Main(2, "손지원", "2학년 3반", "ㅇㅇ"))
+        mainArrayList.add(Main(3, "최성현", "2학년 4반", "ㅎ"))
 
         binding.iamgeBtnBack.setOnClickListener {
             startActivity(Intent(this, LoginBaseActivity::class.java))
@@ -48,7 +54,5 @@ class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
         startActivity(intent)
     }
 
-    override fun observeEvent() {
-
-    }
+    override fun observeEvent() {}
 }
