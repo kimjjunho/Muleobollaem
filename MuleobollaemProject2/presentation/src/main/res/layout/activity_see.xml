@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".feature.see.SeeActivity">
+
+        <ImageButton
+            android:id="@+id/image_btn_back"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginStart="28dp"
+            android:layout_marginTop="-10dp"
+            android:scaleType="fitCenter"
+            android:src="@drawable/main_back"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="56dp"
+            android:layout_height="18dp"
+            android:layout_marginTop="50dp"
+            android:fontFamily="@font/inter_bold"
+            android:text="댓글달기"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/image_btn_finish"
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="-12dp"
+            android:layout_marginEnd="15dp"
+            android:fontFamily="@font/inter_medium"
+            android:includeFontPadding="false"
+            android:text="삭제"
+            android:textColor="@color/black"
+            android:textSize="15dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="320dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="40dp"
+            android:text="Timetable 좀 알려주세요 ㅠㅠㅠ"
+            android:textColor="#343434"
+            android:textSize="15dp"
+            android:fontFamily="@font/inter_medium"
+            android:includeFontPadding="false"
+            android:gravity="center_vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView" />
+
+        <TextView
+            android:id="@+id/tv_main"
+            android:layout_width="320dp"
+            android:layout_height="200dp"
+            android:layout_marginTop="16dp"
+            android:text="Timetable 에 오류가 났어요 ㅜㅜ 이게 누가 알려주
+실 수 있나요..? "
+            android:textColor="#343434"
+            android:textSize="13dp"
+            android:fontFamily="@font/inter_medium"
+            android:includeFontPadding="false"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_title" />
+
+        <EditText
+            android:id="@+id/editText"
+            android:layout_width="300dp"
+            android:layout_height="36dp"
+            android:layout_marginTop="36dp"
+            android:background="@drawable/see_edit_text"
+            android:hint="댓글을 입력해주세요."
+            android:paddingLeft="15dp"
+            android:textColor="#AAAAAA"
+            android:textSize="13dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.495"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tv_main" />
+
+
+        <Button
+            style="?android:attr/borderlessButtonStyle"
+            android:layout_width="50dp"
+            android:layout_height="35dp"
+            android:layout_marginEnd="5dp"
+            android:text="전송"
+            android:textColor="#3ABD2F"
+            android:textSize="13dp"
+            app:layout_constraintBottom_toBottomOf="@+id/editText"
+            app:layout_constraintEnd_toEndOf="@+id/editText"
+            app:layout_constraintTop_toTopOf="@+id/editText" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_marginTop="10dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/editText" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
