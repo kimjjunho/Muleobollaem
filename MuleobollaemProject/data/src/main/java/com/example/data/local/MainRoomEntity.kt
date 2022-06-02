@@ -11,6 +11,16 @@ data class MainRoomEntity(
 
 }
 
+fun MainRoomEntity.toMain() =
+    Main(
+        this.name
+    )
+
+fun List<MainRoomEntity>.toEntity(): MainEntity =
+    MainEntity(
+        this.map { it.toMain() }
+    )
+
 fun Main.toRoomEntity() =
     MainRoomEntity(
         name
