@@ -23,7 +23,7 @@ class MainViewModel @Inject constructor(
         viewModelScope.launch {
             try{
                 mainDataUseCase.execute(Unit).collect {
-                    data.value = it
+                    data.value = (it)
                 }
             }catch (e: ErrorHandlerEntity){
                 errorMassage.value = e.sendMassage

@@ -8,7 +8,7 @@ import androidx.databinding.DataBindingUtil
 import androidx.databinding.ViewDataBinding
 import androidx.viewbinding.ViewBinding
 
-abstract class BaseActivity<B: ViewDataBinding> (
+abstract class BaseActivity<B: ViewDataBinding>(
     @LayoutRes private val layoutId: Int
         ):AppCompatActivity(){
 

@@ -1,9 +1,8 @@
 package com.example.data.local.datasource
 
-import com.example.data.local.MainRoomEntity
 import com.example.data.local.dao.MainDao
-import com.example.data.local.toEntity
-import com.example.data.remote.datasorce.LocalMainDataSource
+import com.example.data.local.entity.MainRoomEntity
+import com.example.data.local.entity.toEntity
 import com.example.domain.entity.MainEntity
 import javax.inject.Inject
 

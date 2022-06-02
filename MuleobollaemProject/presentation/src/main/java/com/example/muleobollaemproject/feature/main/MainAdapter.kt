@@ -3,6 +3,7 @@ package com.example.muleobollaemproject.feature.main
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.example.domain.entity.Main
 import com.example.muleobollaemproject.R
 import com.example.muleobollaemproject.databinding.ItemMainBinding
 import com.example.muleobollaemproject.feature.main.ui.MainActivity

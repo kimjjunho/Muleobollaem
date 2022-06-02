@@ -1,7 +1,7 @@
 package com.example.data.local.dao
 
 import androidx.room.*
-import com.example.data.local.MainRoomEntity
+import com.example.data.local.entity.MainRoomEntity
 
 @Dao
 interface MainDao {

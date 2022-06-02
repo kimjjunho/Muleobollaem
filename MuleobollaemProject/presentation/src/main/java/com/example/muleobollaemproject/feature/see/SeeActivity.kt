@@ -1,6 +1,4 @@
 package com.example.muleobollaemproject.feature.see
-
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.muleobollaemproject.R
 import com.example.muleobollaemproject.base.BaseActivity

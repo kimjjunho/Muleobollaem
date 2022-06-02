@@ -17,7 +17,6 @@ class LoginFragment : BaseFragment<FragmentLoginBinding>(R.layout.fragment_login
 
     override fun initView() {
         val loginBaseActivity = activity as LoginBaseActivity
-
         binding.run {
             btnSign.setOnClickListener {
                 loginBaseActivity.fragmentChange()

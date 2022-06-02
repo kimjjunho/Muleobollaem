@@ -1,8 +1,8 @@
-package com.example.data
+package com.example.data.repository
 
-import com.example.data.local.toRoomEntity
-import com.example.data.remote.RemoteMainDataSource
-import com.example.data.remote.datasorce.LocalMainDataSource
+import com.example.data.local.datasource.LocalMainDataSource
+import com.example.data.local.entity.toRoomEntity
+import com.example.data.remote.datasorce.RemoteMainDataSource
 import com.example.data.remote.model.toEntity
 import com.example.data.util.OfflineCacheUtil
 import com.example.domain.entity.MainEntity

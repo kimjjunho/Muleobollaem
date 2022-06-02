@@ -1,6 +1,8 @@
-package com.example.muleobollaemproject.feature.main
+package com.example.domain.entity
 
-data class MainData(
+import java.util.*
+
+data class Main(
     val id_pk : Int,
     val name: String,
     val title: String,
