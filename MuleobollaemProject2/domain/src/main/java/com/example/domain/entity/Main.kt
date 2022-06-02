@@ -1,4 +1,4 @@
-package com.example.muleobollaemproject2.feature
+package com.example.domain.entity
 
 data class Main(
     val id_pk : Int,
