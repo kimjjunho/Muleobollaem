@@ -5,7 +5,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.databinding.ItemMainBinding
-import com.example.muleobollaemproject2.feature.Main
+import com.example.domain.entity.Main
+import com.example.muleobollaemproject2.feature.main.ui.MainActivity
 
 class MainAdapter (private val mainList:ArrayList<Main>, private val mainActivity: MainActivity):
     RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {

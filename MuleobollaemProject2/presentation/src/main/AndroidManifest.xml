@@ -16,7 +16,7 @@
             android:name=".feature.write.WriteActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.main.MainActivity"
+            android:name=".feature.main.ui.MainActivity"
             android:exported="false" />
         <activity
             android:name=".feature.login.LoginBaseActivity"
