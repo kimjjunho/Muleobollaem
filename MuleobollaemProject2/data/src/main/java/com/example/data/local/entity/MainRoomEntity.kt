@@ -5,7 +5,7 @@ import androidx.room.PrimaryKey
 import com.example.domain.entity.Main
 import com.example.domain.entity.MainEntity
 
-@Entity
+@Entity(tableName = "main_room")
 data class MainRoomEntity(
     val id_pk:Int,
     val name: String,
