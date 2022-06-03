@@ -15,6 +15,19 @@ data class MainRoomEntity(
     @PrimaryKey(autoGenerate = true) var id: Int = 0
 }
 
+fun MainRoomEntity.toMain() =
+    Main(
+        this.id_pk,
+        this.name,
+        this.title,
+        this.main
+    )
+
+fun List<MainRoomEntity>.toEntity(): MainEntity =
+    MainEntity(
+        this.map { it.toMain() }
+    )
+
 fun Main.toRoomEntity() =
     MainRoomEntity(
         id_pk,

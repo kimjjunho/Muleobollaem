@@ -1,6 +1,6 @@
 package com.example.data
 
-import com.example.data.local.LocalMainDataSource
+import com.example.data.local.datasource.LocalMainDataSource
 import com.example.data.local.entity.toRoomEntity
 import com.example.data.remote.datasource.RemoteMainDataSource
 import com.example.data.remote.model.toEntity
