@@ -10,11 +10,11 @@ import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
 import com.example.muleobollaemproject2.databinding.ActivityMainBinding
 import com.example.domain.entity.Main
-import com.example.muleobollaemproject2.a
 import com.example.muleobollaemproject2.feature.login.LoginBaseActivity
 import com.example.muleobollaemproject2.feature.main.MainAdapter
 import com.example.muleobollaemproject2.feature.main.viewmodel.MainViewModel
 import com.example.muleobollaemproject2.feature.see.SeeActivity
+import com.example.muleobollaemproject2.feature.write.WriteActivity
 import com.example.muleobollaemproject2.setStatusBarColorBlack
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
@@ -23,12 +23,14 @@ import javax.inject.Inject
 class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
     R.layout.activity_main
 ) {
-
-    //private val mainViewModel: MainViewModel by viewModels()
+    private val mainViewModel: MainViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setStatusBarColorBlack()
+        binding.activity = this
+
+        mainViewModel.getMain()
 
         val mainArrayList = ArrayList<Main>()
         mainArrayList.add(
@@ -45,14 +47,7 @@ class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
             startActivity(Intent(this, LoginBaseActivity::class.java))
             finish()
         }
-        binding.imageBtnWrite.setOnClickListener {
-            a = a.plus("0")
-            //mainViewModel.testViewModel()
-            //startActivity(Intent(this, WriteActivity::class.java))
-        }
 
-        binding.rvMain.layoutManager =
-            LinearLayoutManager(this, LinearLayoutManager.VERTICAL, false)
         binding.rvMain.setHasFixedSize(true)
         binding.rvMain.adapter = MainAdapter(mainArrayList, this)
     }
@@ -64,15 +59,19 @@ class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
         startActivity(intent)
     }
 
+    fun moveToLogin(){
+        startActivity(Intent(this, WriteActivity::class.java))
+    }
+
     override fun observeEvent() {
-        /*mainViewModel.run {
-            errorMassage.observe(this@MainActivity,{
+        mainViewModel.run {
+            errorMassage.observe(this@MainActivity) {
                 Log.d(TAG, "observeEvent: $it")
                 showToastShort(it.toString())
-            })
-            data.observe(this@MainActivity,{
+            }
+            data.observe(this@MainActivity) {
                 Log.d(TAG, "observeEvent: $it")
-            })
-        }*/
+            }
+        }
     }
 }

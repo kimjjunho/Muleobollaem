@@ -1,5 +1,5 @@
 package com.example.domain.base
 
 data class ErrorHandlerEntity(
-    val sendMassage: String
+    val sendMessage: String
 ):Throwable()

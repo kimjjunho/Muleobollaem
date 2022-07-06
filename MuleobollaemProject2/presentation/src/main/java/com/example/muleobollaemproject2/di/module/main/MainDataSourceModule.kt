@@ -11,7 +11,6 @@ import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
-import org.xml.sax.ErrorHandler
 import javax.inject.Singleton
 
 @Module

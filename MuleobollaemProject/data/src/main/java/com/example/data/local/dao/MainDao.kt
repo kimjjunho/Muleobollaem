@@ -4,7 +4,8 @@ import androidx.room.*
 import com.example.data.local.entity.MainRoomEntity
 
 @Dao
-interface MainDao {
+interface
+MainDao {
     @Query("SELECT * FROM main_room")
     suspend fun getMain(): List<MainRoomEntity>
 

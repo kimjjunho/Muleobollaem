@@ -1,4 +1,4 @@
-package com.example.data
+package com.example.data.repository
 
 import com.example.data.local.datasource.LocalMainDataSource
 import com.example.data.local.entity.toRoomEntity
