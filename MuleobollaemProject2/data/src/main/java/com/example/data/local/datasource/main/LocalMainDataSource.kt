@@ -1,4 +1,4 @@
-package com.example.data.local.datasource
+package com.example.data.local.datasource.main
 
 import com.example.data.local.entity.MainRoomEntity
 import com.example.domain.entity.MainEntity

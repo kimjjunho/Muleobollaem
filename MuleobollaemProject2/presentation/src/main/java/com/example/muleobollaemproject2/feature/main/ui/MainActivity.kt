@@ -5,7 +5,6 @@ import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import androidx.activity.viewModels
-import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
 import com.example.muleobollaemproject2.databinding.ActivityMainBinding
@@ -48,8 +47,8 @@ class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
             finish()
         }
 
-        binding.rvMain.setHasFixedSize(true)
-        binding.rvMain.adapter = MainAdapter(mainArrayList, this)
+        //binding.rvMain.setHasFixedSize(true)
+        //binding.rvMain.adapter = MainAdapter(mainArrayList, this)
     }
 
     fun moveSee(main: String, title: String) {

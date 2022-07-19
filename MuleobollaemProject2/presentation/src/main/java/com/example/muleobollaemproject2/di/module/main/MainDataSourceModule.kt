@@ -1,8 +1,8 @@
 package com.example.muleobollaemproject2.di.module.main
 
 import com.example.data.local.dao.MainDao
-import com.example.data.local.datasource.LocalMainDataSource
-import com.example.data.local.datasource.LocalMainDataSourceImpl
+import com.example.data.local.datasource.main.LocalMainDataSource
+import com.example.data.local.datasource.main.LocalMainDataSourceImpl
 import com.example.data.remote.datasource.RemoteMainDataSource
 import com.example.data.remote.datasource.RemoteMainDataSourceImpl
 import com.example.data.remote.network.MainAPI

@@ -1,4 +1,4 @@
-package com.example.data.local.datasource
+package com.example.data.local.datasource.main
 
 import com.example.data.local.dao.MainDao
 import com.example.data.local.entity.MainRoomEntity
@@ -8,7 +8,7 @@ import javax.inject.Inject
 
 class LocalMainDataSourceImpl @Inject constructor(
     private val mainDao: MainDao
-) : LocalMainDataSource{
+) : LocalMainDataSource {
     override suspend fun getMain(): MainEntity =
         mainDao.getMain().toEntity()
 

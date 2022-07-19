@@ -1,6 +1,8 @@
 package com.example.muleobollaemproject2.di.module
 
+import com.example.data.repository.LoginRepositoryImpl
 import com.example.data.repository.MainRepositoryImpl
+import com.example.domain.repository.LoginRepository
 import com.example.domain.repository.MainRepository
 import dagger.Binds
 import dagger.Module
@@ -14,5 +16,10 @@ abstract class RepositoryModule {
     abstract fun bindMainRepositoryImpl(
         mainRepositoryImpl: MainRepositoryImpl
     ): MainRepository
+
+    @Binds
+    abstract fun bindLoginRepositoryImpl(
+        loginRepositoryImpl: LoginRepositoryImpl
+    ): LoginRepository
 
 }

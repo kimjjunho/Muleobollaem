@@ -1,6 +1,7 @@
 package com.example.muleobollaemproject2.di.module
 
 import android.util.Log
+import com.example.data.remote.network.LoginAPI
 import com.example.data.remote.network.MainAPI
 import dagger.Module
 import dagger.Provides
@@ -10,6 +11,7 @@ import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
+import retrofit2.create
 import javax.inject.Singleton
 
 @Module
@@ -48,4 +50,11 @@ object RetrofitModule {
         retrofit: Retrofit
     ):MainAPI =
         retrofit.create(MainAPI::class.java)
+
+    @Singleton
+    @Provides
+    fun provideLoginApi(
+        retrofit: Retrofit
+    ):LoginAPI =
+        retrofit.create(LoginAPI::class.java)
 }
