@@ -15,7 +15,7 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MuleobollaemProject2">
         <activity
-            android:name=".feature.see.SeeActivity"
+            android:name=".feature.see.ui.SeeActivity"
             android:exported="false" />
         <activity
             android:name=".feature.write.WriteActivity"

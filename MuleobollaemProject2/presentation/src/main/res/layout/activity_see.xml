@@ -7,7 +7,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".feature.see.SeeActivity">
+        tools:context=".feature.see.ui.SeeActivity">
 
         <ImageButton
             android:id="@+id/image_btn_back"

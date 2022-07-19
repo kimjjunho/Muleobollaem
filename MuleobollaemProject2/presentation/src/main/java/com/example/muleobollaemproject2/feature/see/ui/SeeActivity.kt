@@ -1,6 +1,5 @@
-package com.example.muleobollaemproject2.feature.see
+package com.example.muleobollaemproject2.feature.see.ui
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
