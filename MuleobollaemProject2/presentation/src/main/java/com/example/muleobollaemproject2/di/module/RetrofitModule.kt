@@ -3,6 +3,7 @@ package com.example.muleobollaemproject2.di.module
 import android.util.Log
 import com.example.data.remote.network.LoginAPI
 import com.example.data.remote.network.MainAPI
+import com.example.data.remote.network.SignUpAPI
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -39,7 +40,7 @@ object RetrofitModule {
         okHttpClient: OkHttpClient
     ): Retrofit =
         Retrofit.Builder()
-            .baseUrl("http://13.124.231.212:5000/")
+            .baseUrl("http://34.209.138.0:5000/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()
@@ -57,4 +58,11 @@ object RetrofitModule {
         retrofit: Retrofit
     ):LoginAPI =
         retrofit.create(LoginAPI::class.java)
+
+    @Singleton
+    @Provides
+    fun provideSignUpApi(
+        retrofit: Retrofit
+    ): SignUpAPI =
+        retrofit.create(SignUpAPI::class.java)
 }
