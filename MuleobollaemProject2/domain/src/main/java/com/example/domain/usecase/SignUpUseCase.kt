@@ -8,5 +8,5 @@ import javax.inject.Inject
 class SignUpUseCase @Inject constructor(
     private val signUpRepository: SignUpRepository
 ): UseCase<SignUpEntity, Unit>() {
-    override suspend fun execute(data: SignUpEntity) = signUpRepository.signUp()
+    override suspend fun execute(data: SignUpEntity) = signUpRepository.signUp(data)
 }
