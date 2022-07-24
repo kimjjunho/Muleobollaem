@@ -1,5 +1,7 @@
 package com.example.data.remote.datasource
 
+import android.util.Log
+import com.example.data.remote.model.MainResponse
 import com.example.data.remote.model.SignUpRequest
 import com.example.data.remote.network.SignUpAPI
 import com.example.domain.handler.SignUpErrorHandler
@@ -13,8 +15,12 @@ class RemoteSignUpDataSourceImpl @Inject constructor(
 ) :RemoteSignUpDataSource{
     override suspend fun signUp(data: SignUpRequest) {
         try {
+            Log.d("TAG", "RemoteSignUpDataSourceImplId: "+data.id)
+            Log.d("TAG", "RemoteSignUpDataSourceImplIdPassword: "+data.password)
+            Log.d("TAG", "RemoteSignUpDataSourceImplIdName: "+data.name)
             signUpAPI.signUp(data)
         }catch (e: Throwable){
+            Log.d("TAG", "catch$e")
             throw errorHandler.signUpErrorHandler(e)
         }
     }

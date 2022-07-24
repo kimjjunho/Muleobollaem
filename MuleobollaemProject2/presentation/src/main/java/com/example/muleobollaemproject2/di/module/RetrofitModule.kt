@@ -40,7 +40,7 @@ object RetrofitModule {
         okHttpClient: OkHttpClient
     ): Retrofit =
         Retrofit.Builder()
-            .baseUrl("http://34.209.138.0:5000/")
+            .baseUrl("http://34.209.138.0:8000/")
             .client(okHttpClient)
             .addConverterFactory(GsonConverterFactory.create())
             .build()

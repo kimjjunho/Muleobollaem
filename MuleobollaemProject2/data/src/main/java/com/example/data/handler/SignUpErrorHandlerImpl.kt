@@ -1,5 +1,6 @@
 package com.example.data.handler
 
+import android.util.Log
 import com.example.domain.base.ErrorHandlerEntity
 import com.example.domain.handler.SignUpErrorHandler
 import retrofit2.HttpException

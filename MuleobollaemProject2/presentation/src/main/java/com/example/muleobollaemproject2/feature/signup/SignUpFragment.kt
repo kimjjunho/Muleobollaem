@@ -1,5 +1,6 @@
 package com.example.muleobollaemproject2.feature.signup
 
+import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
 import com.example.domain.entity.SignUpEntity
@@ -27,7 +28,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(R.layout.fragment_sig
                 Toast.makeText(context, "시용 가능한 아이디입니다!!", Toast.LENGTH_SHORT).show()
             }
             btnSignUp.setOnClickListener {
-                signUpViewModel.signUp(SignUpEntity(etId.toString(),etPassword.toString(),etName.toString()))
+                signUpViewModel.signUp(SignUpEntity(etId.text.toString(),etPassword.text.toString(),etName.text.toString()))
             }
         }
     }

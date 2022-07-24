@@ -1,14 +1,17 @@
 package com.example.muleobollaemproject2.feature.signup.viewmodel
 
 import android.util.Log
+import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.domain.base.ErrorHandlerEntity
 import com.example.domain.entity.SignUpEntity
 import com.example.domain.usecase.SignUpUseCase
 import com.example.muleobollaemproject2.util.MutableEventFlow
 import com.example.muleobollaemproject2.util.asEventFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
+import java.lang.Exception
 import java.lang.IllegalStateException
 import javax.inject.Inject
 
@@ -29,20 +32,25 @@ class SignUpViewModel @Inject constructor(
 
     fun signUp(data: SignUpEntity){
         viewModelScope.launch {
-            kotlin.runCatching {
+            try {
                 signUpUseCase.execute(data)
-            }.onSuccess {
-                event(Event.SuccessSignUp(true))
-            }.onFailure {
-                when(it) {
-                    is IllegalStateException -> {
-                        Log.d("TAG", "illegal 에러 찡찡: ")
-                    }
-                    else -> {
-                        Log.d("TAG", "another exception $it")
-                    }
-                }
+            } catch (e: ErrorHandlerEntity) {
+                Log.d("TAG", "illegal 에러 찡찡: $e")
             }
+//            kotlin.runCatching {
+//                signUpUseCase.execute(data)
+//            }.onSuccess {
+//                event(Event.SuccessSignUp(true))
+//            }.onFailure {
+//                when(it) {
+//                    is IllegalStateException -> {
+//                        Log.d("TAG", "illegal 에러 찡찡: ")
+//                    }
+//                    else -> {
+//                        Log.d("TAG", "another exception $it")
+//                    }
+//                }
+//            }
         }
     }
 
