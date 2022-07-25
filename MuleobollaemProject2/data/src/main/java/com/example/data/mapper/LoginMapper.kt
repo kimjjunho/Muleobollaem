@@ -1,7 +1,7 @@
 package com.example.data.mapper
 
 import com.example.data.remote.model.login.LoginRequest
-import com.example.data.remote.model.LoginResponse
+import com.example.data.remote.model.main.LoginResponse
 import com.example.domain.entity.login.LoginRequestEntity
 import com.example.domain.entity.login.LoginResponseEntity
 

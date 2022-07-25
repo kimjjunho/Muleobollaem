@@ -2,6 +2,7 @@ package com.example.muleobollaemproject2.feature.write.ui
 
 import android.os.Bundle
 import androidx.activity.viewModels
+import com.example.domain.entity.write.SendWriteEntity
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
 import com.example.muleobollaemproject2.databinding.ActivityWriteBinding
@@ -21,7 +22,7 @@ class WriteActivity @Inject constructor() : BaseActivity<ActivityWriteBinding>(R
 
         binding.run {
             imageBtnFinish.setOnClickListener {
-                finish()
+                writeViewModel.sendWrite(SendWriteEntity(etTitle.text.toString(), etContent.text.toString()))
             }
             iamgeBtnBack.setOnClickListener {
                 finish()
@@ -29,5 +30,15 @@ class WriteActivity @Inject constructor() : BaseActivity<ActivityWriteBinding>(R
         }
     }
 
-    override fun observeEvent() {}
+    override fun observeEvent() {
+        writeViewModel.run {
+            success.observe(this@WriteActivity){
+                showToastShort("글 쓰기 성공")
+                finish()
+            }
+            fail.observe(this@WriteActivity){
+                showToastShort(it)
+            }
+        }
+    }
 }

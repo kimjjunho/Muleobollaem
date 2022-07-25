@@ -1,4 +1,4 @@
-package com.example.muleobollaemproject2.di.module.main
+package com.example.muleobollaemproject2.di.module.own
 
 import com.example.data.remote.datasource.login.RemoteLoginDataSource
 import com.example.data.remote.datasource.login.RemoteLoginDataSourceImpl

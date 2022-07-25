@@ -71,14 +71,14 @@
             android:layout_width="320dp"
             android:layout_height="200dp"
             android:layout_marginTop="16dp"
+            android:fontFamily="@font/inter_medium"
+            android:includeFontPadding="false"
             android:text="Timetable 에 오류가 났어요 ㅜㅜ 이게 누가 알려주
 실 수 있나요..? "
             android:textColor="#343434"
             android:textSize="13dp"
-            android:fontFamily="@font/inter_medium"
-            android:includeFontPadding="false"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.496"
+            app:layout_constraintHorizontal_bias="0.494"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/tv_title" />
 

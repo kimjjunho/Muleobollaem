@@ -1,4 +1,4 @@
-package com.example.muleobollaemproject2.di.module.main
+package com.example.muleobollaemproject2.di.module.own
 
 import com.example.data.local.dao.MainDao
 import com.example.data.local.datasource.main.LocalMainDataSource

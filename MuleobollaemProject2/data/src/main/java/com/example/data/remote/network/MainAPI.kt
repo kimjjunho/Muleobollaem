@@ -1,6 +1,6 @@
 package com.example.data.remote.network
 
-import com.example.data.remote.model.MainResponse
+import com.example.data.remote.model.main.MainResponse
 import retrofit2.http.GET
 import retrofit2.http.Header
 

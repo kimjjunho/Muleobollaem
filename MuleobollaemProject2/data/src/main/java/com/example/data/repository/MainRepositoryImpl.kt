@@ -3,7 +3,7 @@ package com.example.data.repository
 import com.example.data.local.datasource.main.LocalMainDataSource
 import com.example.data.local.entity.toRoomEntity
 import com.example.data.remote.datasource.main.RemoteMainDataSource
-import com.example.data.remote.model.toEntity
+import com.example.data.remote.model.main.toEntity
 import com.example.data.util.OfflineCacheUtil
 import com.example.domain.entity.main.MainEntity
 import com.example.domain.repository.MainRepository

@@ -2,9 +2,11 @@ package com.example.muleobollaemproject2.di.module
 
 import com.example.data.handler.LoginErrorHandlerImpl
 import com.example.data.handler.MainErrorHandlerImpl
+import com.example.data.handler.SendWriteErrorHandlerImpl
 import com.example.data.handler.SignUpErrorHandlerImpl
 import com.example.domain.handler.LoginErrorHandler
 import com.example.domain.handler.MainErrorHandler
+import com.example.domain.handler.SendWriteErrorHandler
 import com.example.domain.handler.SignUpErrorHandler
 import dagger.Module
 import dagger.Provides
@@ -28,4 +30,7 @@ object ErrorHandlerModule {
     @Provides
     fun signUpErrorHandler(): SignUpErrorHandler = SignUpErrorHandlerImpl()
 
+    @Singleton
+    @Provides
+    fun sendWriteErrorHandler(): SendWriteErrorHandler = SendWriteErrorHandlerImpl()
 }

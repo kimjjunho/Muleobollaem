@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<layout
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
-    <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         tools:context=".feature.WriteActivity">
@@ -47,6 +47,38 @@
             android:textSize="15dp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toTopOf="@+id/textView" />
+
+        <EditText
+            android:id="@+id/et_title"
+            android:layout_width="320dp"
+            android:layout_height="32dp"
+            android:background="#00ff0000"
+            android:fontFamily="@font/inter_medium"
+            android:gravity="center_vertical"
+            android:hint="제목을 입력해주세요"
+            android:includeFontPadding="false"
+            android:textColor="#343434"
+            android:textSize="15sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textView"
+            android:layout_marginTop="40dp"/>
+
+        <EditText
+            android:id="@+id/et_content"
+            android:layout_width="320dp"
+            android:layout_height="200dp"
+            android:fontFamily="@font/inter_medium"
+            android:background="#00ff0000"
+            android:hint="본문을 입력해주세요"
+            android:includeFontPadding="false"
+            android:textColor="#343434"
+            android:textSize="15sp"
+            android:gravity="start"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/et_title"
+            android:layout_marginTop="16dp"/>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
