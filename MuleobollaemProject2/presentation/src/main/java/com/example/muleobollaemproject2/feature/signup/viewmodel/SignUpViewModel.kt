@@ -32,25 +32,21 @@ class SignUpViewModel @Inject constructor(
 
     fun signUp(data: SignUpEntity){
         viewModelScope.launch {
-            try {
+            kotlin.runCatching {
                 signUpUseCase.execute(data)
-            } catch (e: ErrorHandlerEntity) {
-                Log.d("TAG", "illegal 에러 찡찡: $e")
+            }.onSuccess {
+                event(Event.SuccessSignUp(true))
+            }.onFailure {
+                event(Event.ErrorMessage(it.toString()))
+                when(it) {
+                    is IllegalStateException -> {
+                        Log.d("TAG", "illegal 에러 찡찡: ")
+                    }
+                    else -> {
+                        Log.d("TAG", "another exception $it")
+                    }
+                }
             }
-//            kotlin.runCatching {
-//                signUpUseCase.execute(data)
-//            }.onSuccess {
-//                event(Event.SuccessSignUp(true))
-//            }.onFailure {
-//                when(it) {
-//                    is IllegalStateException -> {
-//                        Log.d("TAG", "illegal 에러 찡찡: ")
-//                    }
-//                    else -> {
-//                        Log.d("TAG", "another exception $it")
-//                    }
-//                }
-//            }
         }
     }
 

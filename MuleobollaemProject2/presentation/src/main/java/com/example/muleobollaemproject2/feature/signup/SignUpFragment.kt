@@ -40,7 +40,6 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(R.layout.fragment_sig
     }
 
     private fun handlerEvent(event: Event) = when(event){
-
         is Event.SuccessSignUp -> {
             val loginBaseActivity = activity as LoginBaseActivity
             loginBaseActivity.onBackPressed()

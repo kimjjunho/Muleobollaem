@@ -15,12 +15,8 @@ class RemoteSignUpDataSourceImpl @Inject constructor(
 ) :RemoteSignUpDataSource{
     override suspend fun signUp(data: SignUpRequest) {
         try {
-            Log.d("TAG", "RemoteSignUpDataSourceImplId: "+data.id)
-            Log.d("TAG", "RemoteSignUpDataSourceImplIdPassword: "+data.password)
-            Log.d("TAG", "RemoteSignUpDataSourceImplIdName: "+data.name)
             signUpAPI.signUp(data)
         }catch (e: Throwable){
-            Log.d("TAG", "catch$e")
             throw errorHandler.signUpErrorHandler(e)
         }
     }
