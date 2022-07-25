@@ -1,7 +1,7 @@
 package com.example.data.local.datasource.main
 
 import com.example.data.local.entity.MainRoomEntity
-import com.example.domain.entity.MainEntity
+import com.example.domain.entity.main.MainEntity
 
 interface LocalMainDataSource {
     suspend fun getMain(): MainEntity

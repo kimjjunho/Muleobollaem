@@ -1,7 +1,7 @@
 package com.example.muleobollaemproject2.di.module.main
 
-import com.example.data.remote.datasource.RemoteSignUpDataSource
-import com.example.data.remote.datasource.RemoteSignUpDataSourceImpl
+import com.example.data.remote.datasource.signup.RemoteSignUpDataSource
+import com.example.data.remote.datasource.signup.RemoteSignUpDataSourceImpl
 import com.example.data.remote.network.SignUpAPI
 import com.example.domain.handler.SignUpErrorHandler
 import dagger.Module

@@ -1,6 +1,6 @@
-package com.example.data.remote.model
+package com.example.data.remote.model.main
 
-import com.example.domain.entity.LoginResponseEntity
+import com.example.domain.entity.login.LoginResponseEntity
 
 data class LoginResponse(
     val access_token : String

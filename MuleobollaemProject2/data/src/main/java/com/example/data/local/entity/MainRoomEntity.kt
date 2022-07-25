@@ -2,8 +2,8 @@ package com.example.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.domain.entity.Main
-import com.example.domain.entity.MainEntity
+import com.example.domain.entity.main.Main
+import com.example.domain.entity.main.MainEntity
 
 @Entity(tableName = "main_room")
 data class MainRoomEntity(

@@ -1,4 +1,4 @@
-package com.example.data.remote.model
+package com.example.data.remote.model.signup
 
 data class SignUpRequest(
     val id: String,

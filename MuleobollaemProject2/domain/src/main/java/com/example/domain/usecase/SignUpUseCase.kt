@@ -1,9 +1,8 @@
 package com.example.domain.usecase
 
 import com.example.domain.base.UseCase
-import com.example.domain.entity.SignUpEntity
+import com.example.domain.entity.signup.SignUpEntity
 import com.example.domain.repository.SignUpRepository
-import kotlinx.coroutines.flow.Flow
 import javax.inject.Inject
 
 class SignUpUseCase @Inject constructor(

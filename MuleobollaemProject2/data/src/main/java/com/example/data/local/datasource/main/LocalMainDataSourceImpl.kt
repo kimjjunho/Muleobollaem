@@ -3,7 +3,7 @@ package com.example.data.local.datasource.main
 import com.example.data.local.dao.MainDao
 import com.example.data.local.entity.MainRoomEntity
 import com.example.data.local.entity.toEntity
-import com.example.domain.entity.MainEntity
+import com.example.domain.entity.main.MainEntity
 import javax.inject.Inject
 
 class LocalMainDataSourceImpl @Inject constructor(

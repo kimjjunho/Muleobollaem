@@ -1,9 +1,8 @@
-package com.example.muleobollaemproject2.feature.signup
+package com.example.muleobollaemproject2.feature.signup.ui
 
-import android.util.Log
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
-import com.example.domain.entity.SignUpEntity
+import com.example.domain.entity.signup.SignUpEntity
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseFragment
 import com.example.muleobollaemproject2.databinding.FragmentSignUpBinding
@@ -11,7 +10,6 @@ import com.example.muleobollaemproject2.feature.login.LoginBaseActivity
 import com.example.muleobollaemproject2.feature.signup.viewmodel.SignUpViewModel
 import com.example.muleobollaemproject2.feature.signup.viewmodel.SignUpViewModel.Event
 import com.example.muleobollaemproject2.util.repeatOnStarted
-import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 
 class SignUpFragment : BaseFragment<FragmentSignUpBinding>(R.layout.fragment_sign_up) {

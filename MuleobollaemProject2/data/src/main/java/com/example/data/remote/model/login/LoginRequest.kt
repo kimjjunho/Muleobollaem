@@ -1,4 +1,4 @@
-package com.example.data.remote.model
+package com.example.data.remote.model.login
 
 import android.provider.ContactsContract
 

@@ -1,9 +1,8 @@
 package com.example.muleobollaemproject2.feature.login.viewmodel
 
-import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.entity.LoginRequestEntity
+import com.example.domain.entity.login.LoginRequestEntity
 import com.example.domain.usecase.LoginUseCase
 import com.example.muleobollaemproject2.ACCESS_TOKEN
 import com.example.muleobollaemproject2.util.MutableEventFlow

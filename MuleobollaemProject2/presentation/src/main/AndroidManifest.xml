@@ -18,7 +18,7 @@
             android:name=".feature.see.ui.SeeActivity"
             android:exported="false" />
         <activity
-            android:name=".feature.write.WriteActivity"
+            android:name=".feature.write.ui.WriteActivity"
             android:exported="false" />
         <activity
             android:name=".feature.main.ui.MainActivity"

@@ -1,8 +1,7 @@
 package com.example.domain.repository
 
-import com.example.domain.entity.LoginRequestEntity
-import com.example.domain.entity.LoginResponseEntity
-import kotlinx.coroutines.flow.Flow
+import com.example.domain.entity.login.LoginRequestEntity
+import com.example.domain.entity.login.LoginResponseEntity
 
 
 interface LoginRepository {

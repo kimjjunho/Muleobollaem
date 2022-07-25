@@ -6,7 +6,7 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.domain.base.ErrorHandlerEntity
-import com.example.domain.entity.MainEntity
+import com.example.domain.entity.main.MainEntity
 import com.example.domain.usecase.GetMainUseCase
 import com.example.muleobollaemproject2.ACCESS_TOKEN
 import dagger.hilt.android.lifecycle.HiltViewModel

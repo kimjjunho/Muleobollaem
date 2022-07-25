@@ -3,8 +3,8 @@ package com.example.muleobollaemproject2.di.module.main
 import com.example.data.local.dao.MainDao
 import com.example.data.local.datasource.main.LocalMainDataSource
 import com.example.data.local.datasource.main.LocalMainDataSourceImpl
-import com.example.data.remote.datasource.RemoteMainDataSource
-import com.example.data.remote.datasource.RemoteMainDataSourceImpl
+import com.example.data.remote.datasource.main.RemoteMainDataSource
+import com.example.data.remote.datasource.main.RemoteMainDataSourceImpl
 import com.example.data.remote.network.MainAPI
 import com.example.domain.handler.MainErrorHandler
 import dagger.Module
@@ -21,7 +21,7 @@ object MainDataSourceModule {
     fun provideMainRemoteDataSource(
         mainAPI: MainAPI,
         errorHandler: MainErrorHandler
-    ):RemoteMainDataSource = RemoteMainDataSourceImpl(mainAPI, errorHandler)
+    ): RemoteMainDataSource = RemoteMainDataSourceImpl(mainAPI, errorHandler)
 
     @Singleton
     @Provides

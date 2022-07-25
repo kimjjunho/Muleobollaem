@@ -1,4 +1,4 @@
-package com.example.data.remote.datasource
+package com.example.data.remote.datasource.main
 
 import com.example.data.remote.model.MainResponse
 

@@ -1,4 +1,4 @@
-package com.example.muleobollaemproject2.feature.write
+package com.example.muleobollaemproject2.feature.write.viewmodel
 
 import android.view.View
 import androidx.lifecycle.ViewModel

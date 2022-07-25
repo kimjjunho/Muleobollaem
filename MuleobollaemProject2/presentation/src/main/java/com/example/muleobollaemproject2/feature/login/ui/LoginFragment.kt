@@ -3,8 +3,7 @@ package com.example.muleobollaemproject2.feature.login.ui
 import android.content.Intent
 import android.util.Log
 import androidx.fragment.app.activityViewModels
-import androidx.fragment.app.viewModels
-import com.example.domain.entity.LoginRequestEntity
+import com.example.domain.entity.login.LoginRequestEntity
 import com.example.muleobollaemproject2.ACCESS_TOKEN
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseFragment

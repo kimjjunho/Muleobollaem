@@ -2,7 +2,7 @@ package com.example.data.local.entity
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.example.domain.entity.LoginResponseEntity
+import com.example.domain.entity.login.LoginResponseEntity
 
 @Entity(tableName = "login_room")
 data class LoginRoomEntity(

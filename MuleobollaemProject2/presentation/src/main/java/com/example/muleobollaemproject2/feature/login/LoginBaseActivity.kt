@@ -1,12 +1,11 @@
 package com.example.muleobollaemproject2.feature.login
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
 import com.example.muleobollaemproject2.databinding.ActivityLoginBaseBinding
 import com.example.muleobollaemproject2.feature.login.ui.LoginFragment
-import com.example.muleobollaemproject2.feature.signup.SignUpFragment
+import com.example.muleobollaemproject2.feature.signup.ui.SignUpFragment
 import com.example.muleobollaemproject2.setStatusBarTransparent
 import dagger.hilt.android.AndroidEntryPoint
 

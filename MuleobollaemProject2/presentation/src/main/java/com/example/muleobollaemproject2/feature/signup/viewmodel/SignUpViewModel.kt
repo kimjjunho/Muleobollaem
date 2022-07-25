@@ -1,17 +1,14 @@
 package com.example.muleobollaemproject2.feature.signup.viewmodel
 
 import android.util.Log
-import android.widget.Toast
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.domain.base.ErrorHandlerEntity
-import com.example.domain.entity.SignUpEntity
+import com.example.domain.entity.signup.SignUpEntity
 import com.example.domain.usecase.SignUpUseCase
 import com.example.muleobollaemproject2.util.MutableEventFlow
 import com.example.muleobollaemproject2.util.asEventFlow
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
-import java.lang.Exception
 import java.lang.IllegalStateException
 import javax.inject.Inject
 

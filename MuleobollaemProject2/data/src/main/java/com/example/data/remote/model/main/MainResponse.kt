@@ -1,7 +1,7 @@
-package com.example.data.remote.model
+package com.example.data.remote.model.main
 
-import com.example.domain.entity.Main
-import com.example.domain.entity.MainEntity
+import com.example.domain.entity.main.Main
+import com.example.domain.entity.main.MainEntity
 
 data class MainResponse(
     val posts: List<Main>

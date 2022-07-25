@@ -1,10 +1,11 @@
-package com.example.muleobollaemproject2.feature.write
+package com.example.muleobollaemproject2.feature.write.ui
 
 import android.os.Bundle
 import androidx.activity.viewModels
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
 import com.example.muleobollaemproject2.databinding.ActivityWriteBinding
+import com.example.muleobollaemproject2.feature.write.viewmodel.WriteViewModel
 import com.example.muleobollaemproject2.setStatusBarColorBlack
 import dagger.hilt.android.AndroidEntryPoint
 import javax.inject.Inject
