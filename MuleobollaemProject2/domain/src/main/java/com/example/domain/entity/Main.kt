@@ -1,8 +1,9 @@
 package com.example.domain.entity
 
 data class Main(
-    val id_pk : Int,
-    val name: String,
+    val post_id : Int,
     val title: String,
-    val main: String
+    val content: String,
+    val user_id: String,
+    val created_at: String
 )

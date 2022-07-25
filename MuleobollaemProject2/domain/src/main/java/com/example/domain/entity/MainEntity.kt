@@ -1,5 +1,5 @@
 package com.example.domain.entity
 
 data class MainEntity(
-    val mainList: List<Main>
+    val posts: List<Main>
 )

@@ -7,20 +7,22 @@ import com.example.domain.entity.MainEntity
 
 @Entity(tableName = "main_room")
 data class MainRoomEntity(
-    val id_pk:Int,
-    val name: String,
+    val post_id:Int,
     val title: String,
-    val main: String
+    val content: String,
+    val user_id: String,
+    val created_at: String
 ){
     @PrimaryKey(autoGenerate = true) var id: Int = 0
 }
 
 fun MainRoomEntity.toMain() =
     Main(
-        this.id_pk,
-        this.name,
+        this.post_id,
         this.title,
-        this.main
+        this.content,
+        this.user_id,
+        this.created_at
     )
 
 fun List<MainRoomEntity>.toEntity(): MainEntity =
@@ -30,12 +32,9 @@ fun List<MainRoomEntity>.toEntity(): MainEntity =
 
 fun Main.toRoomEntity() =
     MainRoomEntity(
-        id_pk,
-        name,
-        title,
-        main
+        post_id, title, content, user_id, created_at
     )
 
 
-fun MainEntity.toRoomEntity() = this.mainList.map { it.toRoomEntity() }
+fun MainEntity.toRoomEntity() = this.posts.map { it.toRoomEntity() }
 

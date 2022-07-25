@@ -12,12 +12,14 @@ abstract class BaseActivity<B: ViewDataBinding>(
 ):AppCompatActivity() {
     protected lateinit var binding: B
 
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
         binding = DataBindingUtil.setContentView(this,layoutId)
         binding.lifecycleOwner = this
 
+        observeEvent()
     }
 
     fun showToastLong(msg:String){

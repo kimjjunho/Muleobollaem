@@ -4,9 +4,9 @@ import com.example.domain.entity.Main
 import com.example.domain.entity.MainEntity
 
 data class MainResponse(
-    val mainList: List<Main>
+    val posts: List<Main>
 )
 fun MainResponse.toEntity(): MainEntity =
     MainEntity(
-        this.mainList
+        this.posts
     )

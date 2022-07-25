@@ -8,7 +8,7 @@ import com.example.muleobollaemproject2.databinding.ItemMainBinding
 import com.example.domain.entity.Main
 import com.example.muleobollaemproject2.feature.main.ui.MainActivity
 
-class MainAdapter (private val mainList:ArrayList<Main>, private val mainActivity: MainActivity):
+class MainAdapter (private val mainList:List<Main>, private val mainActivity: MainActivity):
     RecyclerView.Adapter<MainAdapter.CustomViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): CustomViewHolder {
@@ -18,11 +18,12 @@ class MainAdapter (private val mainList:ArrayList<Main>, private val mainActivit
     }
 
     override fun onBindViewHolder(holder: CustomViewHolder, position: Int) {
-        holder.binding.itemName.text = mainList[position].name
+        holder.binding.itemName.text = mainList[position].user_id
         holder.binding.itemTitle.text = mainList[position].title
-        holder.binding.itemMain.text = mainList[position].main
+        holder.binding.itemMain.text = mainList[position].content
+        holder.binding.itemId.text = mainList[position].user_id
         holder.itemView.setOnClickListener {
-            mainActivity.moveSee(mainList[position].main, mainList[position].title)
+            mainActivity.moveSee(mainList[position].content, mainList[position].title)
         }
     }
 

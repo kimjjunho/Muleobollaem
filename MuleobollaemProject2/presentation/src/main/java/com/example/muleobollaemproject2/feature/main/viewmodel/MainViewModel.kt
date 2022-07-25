@@ -24,8 +24,10 @@ class MainViewModel @Inject constructor(
 
     fun getMain(){
         viewModelScope.launch {
+            Log.d(TAG, "getMain: 실행됨")
             try {
                 getMainUseCase.execute(ACCESS_TOKEN).collect {
+                    Log.d(TAG, "getMain: $it")
                     data.value = it
                 }
             }catch (e: ErrorHandlerEntity){

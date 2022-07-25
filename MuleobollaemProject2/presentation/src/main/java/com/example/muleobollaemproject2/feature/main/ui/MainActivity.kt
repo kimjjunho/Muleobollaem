@@ -10,6 +10,7 @@ import com.example.muleobollaemproject2.base.BaseActivity
 import com.example.muleobollaemproject2.databinding.ActivityMainBinding
 import com.example.domain.entity.Main
 import com.example.muleobollaemproject2.feature.login.LoginBaseActivity
+import com.example.muleobollaemproject2.feature.main.MainAdapter
 import com.example.muleobollaemproject2.feature.main.viewmodel.MainViewModel
 import com.example.muleobollaemproject2.feature.see.ui.SeeActivity
 import com.example.muleobollaemproject2.feature.write.WriteActivity
@@ -28,26 +29,14 @@ class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
         setStatusBarColorBlack()
         binding.activity = this
 
-        //mainViewModel.getMain()
-
-        val mainArrayList = ArrayList<Main>()
-        mainArrayList.add(
-            Main(
-                0, "김준호", "2학년 1반", "Timetable 에 오류가 났어요 ㅜㅜ 이게 누가 알려주\n" +
-                        "실 수 있나요..? "
-            )
-        )
-        mainArrayList.add(Main(1, "장석연", "2학년 2반", "dd"))
-        mainArrayList.add(Main(2, "손지원", "2학년 3반", "ㅇㅇ"))
-        mainArrayList.add(Main(3, "최성현", "2학년 4반", "ㅎ"))
+        mainViewModel.getMain()
 
         binding.iamgeBtnBack.setOnClickListener {
             startActivity(Intent(this, LoginBaseActivity::class.java))
             finish()
         }
 
-        //binding.rvMain.setHasFixedSize(true)
-        //binding.rvMain.adapter = MainAdapter(mainArrayList, this)
+
     }
 
     fun moveSee(main: String, title: String) {
@@ -64,12 +53,17 @@ class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
     override fun observeEvent() {
         mainViewModel.run {
             errorMassage.observe(this@MainActivity) {
-                Log.d(TAG, "observeEvent: $it")
                 showToastShort(it.toString())
             }
             data.observe(this@MainActivity) {
-                Log.d(TAG, "observeEvent: $it")
+                binding.rvMain.setHasFixedSize(true)
+                binding.rvMain.adapter = MainAdapter(it.posts, this@MainActivity)
             }
         }
+    }
+
+    override fun onResume() {
+        super.onResume()
+        mainViewModel.getMain()
     }
 }
