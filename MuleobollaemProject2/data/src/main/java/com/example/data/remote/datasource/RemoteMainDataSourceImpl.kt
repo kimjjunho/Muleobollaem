@@ -9,9 +9,9 @@ class RemoteMainDataSourceImpl @Inject constructor(
     private val mainAPI: MainAPI,
     private val errorHandler: MainErrorHandler
 ) : RemoteMainDataSource {
-    override suspend fun getMain(): MainResponse =
+    override suspend fun getMain(header: String): MainResponse =
         try {
-            mainAPI.getMain()
+            mainAPI.getMain(header)
         } catch (e: Throwable) {
             throw errorHandler.getMainErrorHandler(e)
         }

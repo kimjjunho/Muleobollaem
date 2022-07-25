@@ -14,9 +14,9 @@ class MainRepositoryImpl @Inject constructor(
     private val remoteMainDataSource: RemoteMainDataSource,
     private val localMainDataSource: LocalMainDataSource
 ): MainRepository {
-    override suspend fun getExchange(): Flow<MainEntity> =
+    override suspend fun getExchange(header: String): Flow<MainEntity> =
         OfflineCacheUtil<MainEntity>()
-            .remoteData { remoteMainDataSource.getMain().toEntity() }
+            .remoteData { remoteMainDataSource.getMain(header).toEntity() }
             .localData { localMainDataSource.getMain() }
             .doOnNeedRefresh { localMainDataSource.updateMain(it.toRoomEntity()) }
             .createFlow()

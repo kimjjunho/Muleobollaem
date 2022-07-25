@@ -8,6 +8,7 @@ import androidx.lifecycle.viewModelScope
 import com.example.domain.base.ErrorHandlerEntity
 import com.example.domain.entity.MainEntity
 import com.example.domain.usecase.GetMainUseCase
+import com.example.muleobollaemproject2.ACCESS_TOKEN
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
@@ -24,7 +25,7 @@ class MainViewModel @Inject constructor(
     fun getMain(){
         viewModelScope.launch {
             try {
-                getMainUseCase.execute(Unit).collect {
+                getMainUseCase.execute(ACCESS_TOKEN).collect {
                     data.value = it
                 }
             }catch (e: ErrorHandlerEntity){

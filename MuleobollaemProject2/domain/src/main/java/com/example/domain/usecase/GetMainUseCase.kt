@@ -8,6 +8,6 @@ import javax.inject.Inject
 
 class GetMainUseCase @Inject constructor(
     private val mainRepository: MainRepository
-): UseCase<Unit,Flow<MainEntity>>() {
-    override suspend fun execute(data: Unit): Flow<MainEntity> = mainRepository.getExchange()
+): UseCase<String,Flow<MainEntity>>() {
+    override suspend fun execute(header: String): Flow<MainEntity> = mainRepository.getExchange(header)
 }
