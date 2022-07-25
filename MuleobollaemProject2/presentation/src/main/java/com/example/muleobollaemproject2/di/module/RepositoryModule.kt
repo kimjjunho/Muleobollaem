@@ -1,5 +1,6 @@
 package com.example.muleobollaemproject2.di.module
 
+import com.example.data.remote.datasource.put.RemotePutPostDataSourceImpl
 import com.example.data.repository.*
 import com.example.domain.repository.*
 import dagger.Binds
@@ -34,4 +35,9 @@ abstract class RepositoryModule {
     abstract fun deletePostRepositoryImpl(
         deleteRepositoryImpl: DeleteRepositoryImpl
     ): DeleteRepository
+
+    @Binds
+    abstract fun putPostRepositoryImpl(
+        putPostRepositoryImpl: PutPostRepositoryImpl
+    ): PutPostRepository
 }

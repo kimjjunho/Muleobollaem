@@ -1,8 +1,13 @@
 package com.example.muleobollaemproject2.feature.see.ui
 
 import android.os.Bundle
+import android.text.Editable
+import android.text.TextWatcher
 import android.util.Log
+import android.view.View
+import android.widget.TextView
 import androidx.activity.viewModels
+import com.example.domain.entity.put.PutPostRequestEntity
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
 import com.example.muleobollaemproject2.databinding.ActivitySeeBinding
@@ -26,15 +31,23 @@ class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layo
         val id = intent.getIntExtra("id",0)
 
         binding.run {
-            tvTitle.text = title
-            tvMain.text = main
+            tvTitle.setText(title, TextView.BufferType.EDITABLE)
+            tvMain.setText(main, TextView.BufferType.EDITABLE)
+            btnSetting()
+
             imageBtnBack.setOnClickListener {
                 finish()
             }
 
-            imageBtnDelete.setOnClickListener {
+            btnDelete.setOnClickListener {
                 seeViewModel.deletePost(id)
-                Log.d("TAG", "onCreate: $id")
+            }
+
+            btnChange.setOnClickListener {
+                seeViewModel.putPost(PutPostRequestEntity(tvTitle.text.toString(),tvMain.text.toString()),id)
+
+                btnChange.visibility = View.INVISIBLE
+                btnDelete.visibility = View.VISIBLE
             }
         }
     }
@@ -48,6 +61,35 @@ class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layo
             deleteFail.observe(this@SeeActivity){
                 showToastShort(it)
             }
+
+            putSuccess.observe(this@SeeActivity){
+                showToastShort("글 수정 성공")
+            }
+            putFail.observe(this@SeeActivity){
+                showToastShort(it)
+            }
+        }
+    }
+
+    private fun btnSetting(){
+        binding.run {
+            tvTitle.addTextChangedListener(object: TextWatcher{
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    btnDelete.visibility = View.INVISIBLE
+                    btnChange.visibility = View.VISIBLE
+                }
+                override fun afterTextChanged(p0: Editable?) {}
+            })
+
+            tvMain.addTextChangedListener(object: TextWatcher{
+                override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {}
+                override fun onTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {
+                    btnDelete.visibility = View.INVISIBLE
+                    btnChange.visibility = View.VISIBLE
+                }
+                override fun afterTextChanged(p0: Editable?) {}
+            })
         }
     }
 }

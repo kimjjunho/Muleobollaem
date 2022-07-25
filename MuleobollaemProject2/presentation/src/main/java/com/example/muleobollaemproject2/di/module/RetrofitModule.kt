@@ -77,4 +77,11 @@ object RetrofitModule {
         retrofit: Retrofit
     ): DeleteAPI =
         retrofit.create(DeleteAPI::class.java)
+
+    @Singleton
+    @Provides
+    fun providePutPostApi(
+        retrofit: Retrofit
+    ): PutAPI =
+        retrofit.create(PutAPI::class.java)
 }

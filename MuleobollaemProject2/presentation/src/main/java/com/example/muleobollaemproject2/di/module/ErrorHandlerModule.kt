@@ -31,4 +31,8 @@ object ErrorHandlerModule {
     @Singleton
     @Provides
     fun deletePostErrorHandler(): DeleteErrorHandler = DeleteErrorHandlerImpl()
+
+    @Singleton
+    @Provides
+    fun putErrorHandler(): PutErrorHandler = PutErrorHandlerImpl()
 }
