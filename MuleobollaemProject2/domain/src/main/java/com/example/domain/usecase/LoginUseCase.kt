@@ -9,6 +9,6 @@ import kotlinx.coroutines.flow.Flow
 
 class LoginUseCase @Inject constructor(
     private val loginRepository: LoginRepository
-): UseCase<LoginRequestEntity,Flow<LoginResponseEntity>>() {
-    override suspend fun execute(data: LoginRequestEntity): Flow<LoginResponseEntity> = loginRepository.getLogin(data)
+): UseCase<LoginRequestEntity,LoginResponseEntity>() {
+    override suspend fun execute(data: LoginRequestEntity): LoginResponseEntity = loginRepository.getLogin(data)
 }

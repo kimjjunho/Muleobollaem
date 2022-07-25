@@ -28,7 +28,7 @@ class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
         setStatusBarColorBlack()
         binding.activity = this
 
-        mainViewModel.getMain()
+        //mainViewModel.getMain()
 
         val mainArrayList = ArrayList<Main>()
         mainArrayList.add(
