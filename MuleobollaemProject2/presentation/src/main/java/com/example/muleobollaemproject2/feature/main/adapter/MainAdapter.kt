@@ -23,7 +23,7 @@ class MainAdapter (private val mainList:List<Main>, private val mainActivity: Ma
         holder.binding.itemMain.text = mainList[position].content
         holder.binding.itemId.text = mainList[position].post_id.toString()
         holder.itemView.setOnClickListener {
-            mainActivity.moveSee(mainList[position].content, mainList[position].title)
+            mainActivity.moveSee(mainList[position].content, mainList[position].title, mainList[position].post_id)
         }
     }
 

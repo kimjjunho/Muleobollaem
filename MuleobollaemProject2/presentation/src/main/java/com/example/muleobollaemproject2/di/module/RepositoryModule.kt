@@ -1,13 +1,7 @@
 package com.example.muleobollaemproject2.di.module
 
-import com.example.data.repository.LoginRepositoryImpl
-import com.example.data.repository.MainRepositoryImpl
-import com.example.data.repository.SendWriteRepositoryImpl
-import com.example.data.repository.SignUpRepositoryImpl
-import com.example.domain.repository.LoginRepository
-import com.example.domain.repository.MainRepository
-import com.example.domain.repository.SendWriteRepository
-import com.example.domain.repository.SignUpRepository
+import com.example.data.repository.*
+import com.example.domain.repository.*
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn
@@ -35,4 +29,9 @@ abstract class RepositoryModule {
     abstract fun bindSendWriteRepositoryImpl(
         writeRepositoryImpl: SendWriteRepositoryImpl
     ): SendWriteRepository
+
+    @Binds
+    abstract fun deletePostRepositoryImpl(
+        deleteRepositoryImpl: DeleteRepositoryImpl
+    ): DeleteRepository
 }

@@ -1,10 +1,7 @@
 package com.example.muleobollaemproject2.di.module
 
 import android.util.Log
-import com.example.data.remote.network.LoginAPI
-import com.example.data.remote.network.MainAPI
-import com.example.data.remote.network.SignUpAPI
-import com.example.data.remote.network.WriteAPI
+import com.example.data.remote.network.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -73,4 +70,11 @@ object RetrofitModule {
         retrofit: Retrofit
     ):WriteAPI =
         retrofit.create(WriteAPI::class.java)
+
+    @Singleton
+    @Provides
+    fun provideDeletePostApi(
+        retrofit: Retrofit
+    ): DeleteAPI =
+        retrofit.create(DeleteAPI::class.java)
 }

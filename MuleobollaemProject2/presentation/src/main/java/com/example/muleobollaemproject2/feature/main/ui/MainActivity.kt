@@ -36,10 +36,11 @@ class MainActivity @Inject constructor(): BaseActivity<ActivityMainBinding>(
 
     }
 
-    fun moveSee(main: String, title: String) {
+    fun moveSee(main: String, title: String, id: Int) {
         val intent = Intent(applicationContext, SeeActivity::class.java)
         intent.putExtra("main", main)
         intent.putExtra("title", title)
+        intent.putExtra("id",id)
         startActivity(intent)
     }
 

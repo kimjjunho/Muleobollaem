@@ -1,13 +1,7 @@
 package com.example.muleobollaemproject2.di.module
 
-import com.example.data.handler.LoginErrorHandlerImpl
-import com.example.data.handler.MainErrorHandlerImpl
-import com.example.data.handler.SendWriteErrorHandlerImpl
-import com.example.data.handler.SignUpErrorHandlerImpl
-import com.example.domain.handler.LoginErrorHandler
-import com.example.domain.handler.MainErrorHandler
-import com.example.domain.handler.SendWriteErrorHandler
-import com.example.domain.handler.SignUpErrorHandler
+import com.example.data.handler.*
+import com.example.domain.handler.*
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -33,4 +27,8 @@ object ErrorHandlerModule {
     @Singleton
     @Provides
     fun sendWriteErrorHandler(): SendWriteErrorHandler = SendWriteErrorHandlerImpl()
+
+    @Singleton
+    @Provides
+    fun deletePostErrorHandler(): DeleteErrorHandler = DeleteErrorHandlerImpl()
 }
