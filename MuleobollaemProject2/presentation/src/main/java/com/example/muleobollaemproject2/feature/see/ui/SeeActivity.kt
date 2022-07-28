@@ -46,8 +46,6 @@ class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layo
             btnChange.setOnClickListener {
                 seeViewModel.putPost(PutPostRequestEntity(tvTitle.text.toString(),tvMain.text.toString()),id)
 
-                btnChange.visibility = View.INVISIBLE
-                btnDelete.visibility = View.VISIBLE
             }
         }
     }
@@ -64,6 +62,11 @@ class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layo
 
             putSuccess.observe(this@SeeActivity){
                 showToastShort("글 수정 성공")
+
+                binding.run {
+                    btnChange.visibility = View.INVISIBLE
+                    btnDelete.visibility = View.VISIBLE
+                }
             }
             putFail.observe(this@SeeActivity){
                 showToastShort(it)

@@ -3,7 +3,9 @@ package com.example.muleobollaemproject2.feature.signup.viewmodel
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.example.domain.entity.signup.CheckIdEntity
 import com.example.domain.entity.signup.SignUpEntity
+import com.example.domain.usecase.CheckIdUseCase
 import com.example.domain.usecase.SignUpUseCase
 import com.example.muleobollaemproject2.util.MutableEventFlow
 import com.example.muleobollaemproject2.util.asEventFlow
@@ -15,7 +17,8 @@ import javax.inject.Inject
 
 @HiltViewModel
 class SignUpViewModel @Inject constructor(
-    private val signUpUseCase: SignUpUseCase
+    private val signUpUseCase: SignUpUseCase,
+    private val checkIdUseCase: CheckIdUseCase
 ):ViewModel() {
 
     private val _eventFlow = MutableEventFlow<Event>()
@@ -24,6 +27,18 @@ class SignUpViewModel @Inject constructor(
     private fun event(event: Event) {
         viewModelScope.launch {
             _eventFlow.emit(event)
+        }
+    }
+
+    fun idCheck(data: CheckIdEntity){
+        viewModelScope.launch {
+            kotlin.runCatching {
+                checkIdUseCase.execute(data)
+            }.onSuccess {
+                event(Event.SuccessSignUp(true))
+            }.onFailure {
+                event(Event.ErrorMessage(it.toString()))
+            }
         }
     }
 
@@ -48,6 +63,7 @@ class SignUpViewModel @Inject constructor(
     }
 
     sealed class Event{
+        data class CheckId(var state: Boolean = false) : Event()
         data class SuccessSignUp(var state: Boolean = false) : Event()
         data class ErrorMessage(val errorMessage: String) : Event()
     }

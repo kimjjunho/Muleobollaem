@@ -2,6 +2,7 @@ package com.example.muleobollaemproject2.feature.signup.ui
 
 import android.widget.Toast
 import androidx.fragment.app.activityViewModels
+import com.example.domain.entity.signup.CheckIdEntity
 import com.example.domain.entity.signup.SignUpEntity
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseFragment
@@ -14,6 +15,7 @@ import kotlinx.coroutines.flow.collect
 
 class SignUpFragment : BaseFragment<FragmentSignUpBinding>(R.layout.fragment_sign_up) {
 
+    private var idCheck = false
     private val signUpViewModel by activityViewModels<SignUpViewModel>()
 
     override fun initView(){
@@ -23,7 +25,7 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(R.layout.fragment_sig
                 loginBaseActivity.onBackPressed()
             }
             btnIdCheck.setOnClickListener {
-                Toast.makeText(context, "시용 가능한 아이디입니다!!", Toast.LENGTH_SHORT).show()
+                signUpViewModel.idCheck(CheckIdEntity(etId.text.toString()))
             }
             btnSignUp.setOnClickListener {
                 signUpViewModel.signUp(SignUpEntity(etId.text.toString(),etPassword.text.toString(),etName.text.toString()))
@@ -42,7 +44,12 @@ class SignUpFragment : BaseFragment<FragmentSignUpBinding>(R.layout.fragment_sig
             val loginBaseActivity = activity as LoginBaseActivity
             loginBaseActivity.onBackPressed()
         }
+        is Event.CheckId -> {
+            showToast("사용 가능한 아이디입니댜")
+        }
         is Event.ErrorMessage -> { showToast(event.errorMessage)}
         else -> { showToast("전혀 알 수 없는 오류입니다.") }
     }
+
+
 }

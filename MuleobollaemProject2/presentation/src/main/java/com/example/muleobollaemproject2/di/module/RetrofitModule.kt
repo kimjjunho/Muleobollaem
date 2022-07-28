@@ -84,4 +84,11 @@ object RetrofitModule {
         retrofit: Retrofit
     ): PutAPI =
         retrofit.create(PutAPI::class.java)
+
+    @Singleton
+    @Provides
+    fun provideCheckIdApi(
+        retrofit: Retrofit
+    ): CheckIdAPI =
+        retrofit.create(CheckIdAPI::class.java)
 }

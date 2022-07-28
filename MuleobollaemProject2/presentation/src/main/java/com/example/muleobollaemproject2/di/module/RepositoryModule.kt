@@ -40,4 +40,9 @@ abstract class RepositoryModule {
     abstract fun putPostRepositoryImpl(
         putPostRepositoryImpl: PutPostRepositoryImpl
     ): PutPostRepository
+
+    @Binds
+    abstract fun checkIdRepositoryImpl(
+        checkIdRepositoryImpl: CheckIdRepositoryImpl
+    ): CheckIdRepository
 }

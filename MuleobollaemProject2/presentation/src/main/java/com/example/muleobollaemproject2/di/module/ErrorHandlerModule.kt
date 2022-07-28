@@ -35,4 +35,8 @@ object ErrorHandlerModule {
     @Singleton
     @Provides
     fun putErrorHandler(): PutErrorHandler = PutErrorHandlerImpl()
+
+    @Singleton
+    @Provides
+    fun checkIdErrorHandler(): CheckIdErrorHandler = CheckIdErrorHandlerImpl()
 }

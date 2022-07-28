@@ -1,14 +1,14 @@
 package com.example.data.handler
 
 import com.example.domain.base.ErrorHandlerEntity
-import com.example.domain.handler.DeleteErrorHandler
+import com.example.domain.handler.CheckIdErrorHandler
 import retrofit2.HttpException
 import java.net.ConnectException
 import java.net.SocketTimeoutException
 import java.net.UnknownHostException
 
-class DeleteErrorHandlerImpl : DeleteErrorHandler {
-    override fun deleteErrorHandler(throwable: Throwable): ErrorHandlerEntity = when(throwable){
+class CheckIdErrorHandlerImpl : CheckIdErrorHandler {
+    override fun checkIdErrorHandler(throwable: Throwable): ErrorHandlerEntity = when(throwable){
         is HttpException -> when(throwable.code()){
             422 -> ErrorHandlerEntity(sendMessage = "입력오류")
             401 -> ErrorHandlerEntity(sendMessage = "토큰오류")
