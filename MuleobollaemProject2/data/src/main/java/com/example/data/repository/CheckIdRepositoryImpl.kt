@@ -1,5 +1,6 @@
 package com.example.data.repository
 
+import android.util.Log
 import com.example.data.mapper.SignUpMapper.mapperToCheckIdRequest
 import com.example.data.remote.datasource.signup.RemoteCheckIdDataSource
 import com.example.domain.entity.signup.CheckIdEntity

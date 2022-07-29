@@ -14,6 +14,7 @@ class CheckIdErrorHandlerImpl : CheckIdErrorHandler {
             401 -> ErrorHandlerEntity(sendMessage = "토큰오류")
             404 -> ErrorHandlerEntity(sendMessage = "토큰을 찾을 수 없음")
             405 -> ErrorHandlerEntity(sendMessage = "메소드 오류")
+            409 -> ErrorHandlerEntity(sendMessage = "해당 id가 이미 존재합니다")
             else -> ErrorHandlerEntity(sendMessage = "알 수 없는 오류가 발생했습니다")
         }
         is ConnectException -> ErrorHandlerEntity(sendMessage = "인터넷 연결이 되지 않았습니다")
