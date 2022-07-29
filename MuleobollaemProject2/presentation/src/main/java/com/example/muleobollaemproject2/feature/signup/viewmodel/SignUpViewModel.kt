@@ -35,7 +35,7 @@ class SignUpViewModel @Inject constructor(
             kotlin.runCatching {
                 checkIdUseCase.execute(data)
             }.onSuccess {
-                event(Event.SuccessSignUp(true))
+                event(Event.CheckId(true))
             }.onFailure {
                 event(Event.ErrorMessage(it.toString()))
             }
