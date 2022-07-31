@@ -39,4 +39,8 @@ object ErrorHandlerModule {
     @Singleton
     @Provides
     fun checkIdErrorHandler(): CheckIdErrorHandler = CheckIdErrorHandlerImpl()
+
+    @Singleton
+    @Provides
+    fun commentErrorHandler(): CommentErrorHandler = CommentErrorHandlerImpl()
 }

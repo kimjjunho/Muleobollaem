@@ -7,11 +7,13 @@ import android.util.Log
 import android.view.View
 import android.widget.TextView
 import androidx.activity.viewModels
+import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.domain.entity.put.PutPostRequestEntity
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
 import com.example.muleobollaemproject2.databinding.ActivitySeeBinding
 import com.example.muleobollaemproject2.feature.main.viewmodel.MainViewModel
+import com.example.muleobollaemproject2.feature.see.adapter.SeeAdapter
 import com.example.muleobollaemproject2.feature.see.viewmodel.SeeViewModel
 import com.example.muleobollaemproject2.setStatusBarColorBlack
 import dagger.hilt.android.AndroidEntryPoint
@@ -21,6 +23,7 @@ import javax.inject.Inject
 class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layout.activity_see) {
 
     private val seeViewModel: SeeViewModel by viewModels()
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -34,6 +37,7 @@ class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layo
             tvTitle.setText(title, TextView.BufferType.EDITABLE)
             tvMain.setText(main, TextView.BufferType.EDITABLE)
             btnSetting()
+            seeViewModel.getComment(id)
 
             imageBtnBack.setOnClickListener {
                 finish()
@@ -45,7 +49,6 @@ class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layo
 
             btnChange.setOnClickListener {
                 seeViewModel.putPost(PutPostRequestEntity(tvTitle.text.toString(),tvMain.text.toString()),id)
-
             }
         }
     }
@@ -69,6 +72,19 @@ class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layo
                 }
             }
             putFail.observe(this@SeeActivity){
+                showToastShort(it)
+            }
+
+            getCommentSuccess.observe(this@SeeActivity){
+
+                binding.recyclerView.run {
+                    adapter = SeeAdapter(it.comment)
+                    layoutManager = LinearLayoutManager(applicationContext, LinearLayoutManager.VERTICAL,false)
+                    setHasFixedSize(true)
+                }
+
+            }
+            getCommentFail.observe(this@SeeActivity){
                 showToastShort(it)
             }
         }

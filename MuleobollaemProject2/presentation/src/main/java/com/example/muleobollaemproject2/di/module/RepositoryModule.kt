@@ -45,4 +45,9 @@ abstract class RepositoryModule {
     abstract fun checkIdRepositoryImpl(
         checkIdRepositoryImpl: CheckIdRepositoryImpl
     ): CheckIdRepository
+
+    @Binds
+    abstract fun getCommentRepositoryImpl(
+        getCommentRepositoryImpl: GetCommentRepositoryImpl
+    ): GetCommentRepository
 }

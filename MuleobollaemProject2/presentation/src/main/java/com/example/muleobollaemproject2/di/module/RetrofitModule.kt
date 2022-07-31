@@ -8,6 +8,7 @@ import dagger.hilt.InstallIn
 import dagger.hilt.components.SingletonComponent
 import okhttp3.OkHttpClient
 import okhttp3.logging.HttpLoggingInterceptor
+import org.w3c.dom.Comment
 import retrofit2.Retrofit
 import retrofit2.converter.gson.GsonConverterFactory
 import retrofit2.create
@@ -91,4 +92,11 @@ object RetrofitModule {
         retrofit: Retrofit
     ): CheckIdAPI =
         retrofit.create(CheckIdAPI::class.java)
+
+    @Singleton
+    @Provides
+    fun provideCommentApi(
+        retrofit: Retrofit
+    ): CommentAPI =
+        retrofit.create(CommentAPI::class.java)
 }

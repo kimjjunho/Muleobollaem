@@ -16,7 +16,8 @@
         <entry key="presentation/src/main/res/layout/activity_write.xml" value="0.1" />
         <entry key="presentation/src/main/res/layout/fragment_login.xml" value="0.1" />
         <entry key="presentation/src/main/res/layout/fragment_sign_up.xml" value="0.3023758099352052" />
-        <entry key="presentation/src/main/res/layout/item_main.xml" value="0.5593124389648438" />
+        <entry key="presentation/src/main/res/layout/item_comment.xml" value="0.6280171712239584" />
+        <entry key="presentation/src/main/res/layout/item_main.xml" value="0.2470978441127695" />
         <entry key="presentation/src/main/res/layout/login_button_click.xml" value="0.11851851851851852" />
       </map>
     </option>

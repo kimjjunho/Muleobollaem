@@ -4,18 +4,22 @@ import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.example.data.remote.model.put.PutPostRequest
+import com.example.domain.entity.comment.CommentResponseEntity
 import com.example.domain.entity.put.PutPostRequestEntity
 import com.example.domain.usecase.DeleteUseCase
+import com.example.domain.usecase.GetCommentUseCase
 import com.example.domain.usecase.PutPostUseCase
 import com.example.muleobollaemproject2.ACCESS_TOKEN
 import dagger.hilt.android.lifecycle.HiltViewModel
+import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.launch
 import javax.inject.Inject
 
 @HiltViewModel
 class SeeViewModel @Inject constructor(
     private val deleteUseCase: DeleteUseCase,
-    private val putPostUseCase: PutPostUseCase
+    private val putPostUseCase: PutPostUseCase,
+    private val getCommentUseCase: GetCommentUseCase
 ):ViewModel(){
 
     val deleteSuccess = MutableLiveData<Boolean>()
@@ -46,6 +50,23 @@ class SeeViewModel @Inject constructor(
                 putFail.value = it.toString()
             }
 
+        }
+    }
+
+    val getCommentSuccess = MutableLiveData<CommentResponseEntity>()
+    val getCommentFail = MutableLiveData<String>()
+
+    fun getComment(id: Int){
+        viewModelScope.launch {
+            kotlin.runCatching {
+                getCommentUseCase.execute(id)
+            }.onSuccess {
+                getCommentUseCase.execute(id).collect {
+                    getCommentSuccess.value = it
+                }
+            }.onFailure {
+                getCommentFail.value = it.toString()
+            }
         }
     }
 }
