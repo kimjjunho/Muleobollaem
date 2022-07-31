@@ -8,6 +8,7 @@ import android.view.View
 import android.widget.TextView
 import androidx.activity.viewModels
 import androidx.recyclerview.widget.LinearLayoutManager
+import com.example.domain.entity.comment.PutCommentRequestEntity
 import com.example.domain.entity.put.PutPostRequestEntity
 import com.example.muleobollaemproject2.R
 import com.example.muleobollaemproject2.base.BaseActivity
@@ -50,6 +51,10 @@ class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layo
             btnChange.setOnClickListener {
                 seeViewModel.putPost(PutPostRequestEntity(tvTitle.text.toString(),tvMain.text.toString()),id)
             }
+
+            btnAddComment.setOnClickListener {
+                seeViewModel.putComment(PutCommentRequestEntity(editText.text.toString(), id))
+            }
         }
     }
 
@@ -87,6 +92,15 @@ class SeeActivity @Inject constructor(): BaseActivity<ActivitySeeBinding>(R.layo
             getCommentFail.observe(this@SeeActivity){
                 showToastShort(it)
             }
+
+            putCommentSuccess.observe(this@SeeActivity){
+                showToastShort("댓글 작성 성공")
+                seeViewModel.getComment(it)
+            }
+            putCommentFail.observe(this@SeeActivity){
+                showToastShort(it)
+            }
+
         }
     }
 

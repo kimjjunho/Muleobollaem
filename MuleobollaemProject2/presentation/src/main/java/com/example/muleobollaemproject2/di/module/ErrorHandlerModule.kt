@@ -43,4 +43,8 @@ object ErrorHandlerModule {
     @Singleton
     @Provides
     fun commentErrorHandler(): CommentErrorHandler = CommentErrorHandlerImpl()
+
+    @Singleton
+    @Provides
+    fun postCommentErrorHandler(): PutCommentErrorHandler = PutCommentErrorHandlerImpl()
 }

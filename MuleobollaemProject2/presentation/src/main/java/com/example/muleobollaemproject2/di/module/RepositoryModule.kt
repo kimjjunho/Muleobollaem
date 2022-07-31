@@ -50,4 +50,9 @@ abstract class RepositoryModule {
     abstract fun getCommentRepositoryImpl(
         getCommentRepositoryImpl: GetCommentRepositoryImpl
     ): GetCommentRepository
+
+    @Binds
+    abstract fun putCommentRepositoryImpl(
+        putCommentRepositoryImpl: PutCommentRepositoryImpl
+    ): PutCommentRepository
 }

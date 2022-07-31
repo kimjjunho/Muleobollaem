@@ -3,11 +3,12 @@ package com.example.muleobollaemproject2.feature.see.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.example.data.remote.model.put.PutPostRequest
 import com.example.domain.entity.comment.CommentResponseEntity
+import com.example.domain.entity.comment.PutCommentRequestEntity
 import com.example.domain.entity.put.PutPostRequestEntity
 import com.example.domain.usecase.DeleteUseCase
 import com.example.domain.usecase.GetCommentUseCase
+import com.example.domain.usecase.PutCommentUseCase
 import com.example.domain.usecase.PutPostUseCase
 import com.example.muleobollaemproject2.ACCESS_TOKEN
 import dagger.hilt.android.lifecycle.HiltViewModel
@@ -19,7 +20,8 @@ import javax.inject.Inject
 class SeeViewModel @Inject constructor(
     private val deleteUseCase: DeleteUseCase,
     private val putPostUseCase: PutPostUseCase,
-    private val getCommentUseCase: GetCommentUseCase
+    private val getCommentUseCase: GetCommentUseCase,
+    private val putCommentUseCase: PutCommentUseCase
 ):ViewModel(){
 
     val deleteSuccess = MutableLiveData<Boolean>()
@@ -66,6 +68,21 @@ class SeeViewModel @Inject constructor(
                 }
             }.onFailure {
                 getCommentFail.value = it.toString()
+            }
+        }
+    }
+
+    val putCommentSuccess = MutableLiveData<Int>()
+    val putCommentFail = MutableLiveData<String>()
+
+    fun putComment(putCommentRequestEntity: PutCommentRequestEntity){
+        viewModelScope.launch {
+            kotlin.runCatching {
+                putCommentUseCase.execute(ACCESS_TOKEN,putCommentRequestEntity)
+            }.onSuccess {
+                putCommentSuccess.value = putCommentRequestEntity.post_id
+            }.onFailure {
+                putCommentFail.value = it.toString()
             }
         }
     }
